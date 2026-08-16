@@ -11889,7 +11889,7 @@ internal static partial class LibVst
         /// <summary>
         /// lock a block if available
         /// </summary>
-        /// <param name="queueID">the ID of the queue</param>
+        /// <param name="queueId">the ID of the queue</param>
         /// <param name="block">on return will contain the data pointer and size of the block</param>
         /// <returns>kResultTrue if a free block was found and kOutOfMemory if all blocks are locked</returns>
         /// <remarks>
@@ -11916,7 +11916,7 @@ internal static partial class LibVst
         /// <summary>
         /// free a previously locked block
         /// </summary>
-        /// <param name="queueID">the ID of the queue</param>
+        /// <param name="queueId">the ID of the queue</param>
         /// <param name="blockID">the ID of the block</param>
         /// <param name="sendToController">if true the block data will be send to the IEditController otherwise
         /// it will be discarded</param>
@@ -12042,7 +12042,7 @@ internal static partial class LibVst
         /// <summary>
         /// lock a block if available
         /// </summary>
-        /// <param name="queueID">the ID of the queue</param>
+        /// <param name="queueId">the ID of the queue</param>
         /// <param name="block">on return will contain the data pointer and size of the block</param>
         /// <returns>kResultTrue if a free block was found and kOutOfMemory if all blocks are locked</returns>
         /// <remarks>
@@ -12086,7 +12086,7 @@ internal static partial class LibVst
         /// <summary>
         /// free a previously locked block
         /// </summary>
-        /// <param name="queueID">the ID of the queue</param>
+        /// <param name="queueId">the ID of the queue</param>
         /// <param name="blockID">the ID of the block</param>
         /// <param name="sendToController">if true the block data will be send to the IEditController otherwise
         /// it will be discarded</param>
@@ -12258,7 +12258,7 @@ internal static partial class LibVst
         /// </summary>
         /// <param name="userContextID">the user context ID of the queue</param>
         /// <param name="blockSize">the size of one block of the queue</param>
-        /// <param name="dispatchedOnBackgroundThread">if true on output the blocks are dispatched on a
+        /// <param name="dispatchOnBackgroundThread">if true on output the blocks are dispatched on a
         /// background thread [defaults to false in which case the
         /// blocks are dispatched on the main thread]</param>
         /// <remarks>
@@ -12339,7 +12339,7 @@ internal static partial class LibVst
         /// </summary>
         /// <param name="userContextID">the user context ID of the queue</param>
         /// <param name="blockSize">the size of one block of the queue</param>
-        /// <param name="dispatchedOnBackgroundThread">if true on output the blocks are dispatched on a
+        /// <param name="dispatchOnBackgroundThread">if true on output the blocks are dispatched on a
         /// background thread [defaults to false in which case the
         /// blocks are dispatched on the main thread]</param>
         /// <remarks>

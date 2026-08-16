@@ -117,22 +117,5 @@ internal static unsafe partial class LibVst
 
             return true;
         }
-
-        private class AudioPluginFrameVst : IAudioPluginFrame
-        {
-            private readonly IPlugFrame* _frame;
-
-            public AudioPluginFrameVst(IPlugFrame* frame)
-            {
-                _frame = frame;
-            }
-
-            public void ResizeView(IAudioPluginView view, ViewRectangle newSize)
-            {
-                var comObject = ComObjectManager.Instance.GetOrCreateComObject(view);
-                var plugView = comObject.QueryInterface<IPlugView>();
-                _frame->resizeView(plugView, (ViewRect*)&newSize);
-            }
-        }
     }
 }

@@ -6,6 +6,7 @@ namespace NPlug.Interop;
 
 using System;
 
+[System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>")]
 internal static unsafe partial class LibVst
 {
     public partial struct IAttributes
@@ -14,47 +15,47 @@ internal static unsafe partial class LibVst
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult queue_ToManaged(IAttributes* self, LibVst.IAttrID listID, LibVst.FVariant* data)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult setBinaryData_ToManaged(IAttributes* self, LibVst.IAttrID attrID, void* data, uint bytes, byte copyBytes)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult get_ToManaged(IAttributes* self, LibVst.IAttrID attrID, LibVst.FVariant* data)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult unqueue_ToManaged(IAttributes* self, LibVst.IAttrID listID, LibVst.FVariant* data)
         {
             throw new NotImplementedException();
         }
-        
-        private static partial int getQueueItemCount_ToManaged(IAttributes* self, LibVst.IAttrID arg)
+
+        private static partial int getQueueItemCount_ToManaged(IAttributes* self, LibVst.IAttrID attrId)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult resetQueue_ToManaged(IAttributes* self, LibVst.IAttrID attrID)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult resetAllQueues_ToManaged(IAttributes* self)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial ComResult getBinaryData_ToManaged(IAttributes* self, LibVst.IAttrID attrID, void* data, uint bytes)
         {
             throw new NotImplementedException();
         }
-        
+
         private static partial uint getBinaryDataSize_ToManaged(IAttributes* self, LibVst.IAttrID attrID)
         {
             throw new NotImplementedException();
