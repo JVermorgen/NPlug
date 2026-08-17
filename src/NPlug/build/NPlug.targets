@@ -57,6 +57,9 @@
     <Compile Condition="'$(NPlugIsMacOS)' == 'true'" Include="$(MSBuildThisFileDirectory)NPlugFactoryExportMacOS.cs">
       <Visible>false</Visible>
     </Compile>
+    <Compile Condition="'$(NPlugIsLinux)' == 'true'" Include="$(MSBuildThisFileDirectory)NPlugFactoryExportLinux.cs">
+      <Visible>false</Visible>
+    </Compile>
   </ItemGroup>
 
   <!--If AOT is disabled, we are using the proxy to load the managed DLL-->
