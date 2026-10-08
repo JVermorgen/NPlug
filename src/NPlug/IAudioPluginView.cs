@@ -100,9 +100,11 @@ public interface IAudioPluginView
     void OnFocus(bool state);
 
     /// <summary>
-    /// Sets IPlugFrame object to allow the plug-in to inform the host about resizing.
+    /// Sets IPlugFrame object to allow the plug-in to inform the host about resizing. Null when the
+    /// host takes the frame back (it calls setFrame(nullptr) before releasing the view): from then on
+    /// the view must not use the frame it had.
     /// </summary>
-    void SetFrame(IAudioPluginFrame frame);
+    void SetFrame(IAudioPluginFrame? frame);
 
     /// <summary>
     /// Is view sizable by user.

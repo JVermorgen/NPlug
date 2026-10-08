@@ -81,7 +81,7 @@ internal static unsafe partial class LibVst
 
         private static partial ComResult setFrame_ToManaged(IPlugView* self, IPlugFrame* frame)
         {
-            Get(self).SetFrame(new AudioPluginFrameVst(frame));
+            Get(self).SetFrame(frame == null ? null : new AudioPluginFrameVst(frame));
             return true;
         }
 
