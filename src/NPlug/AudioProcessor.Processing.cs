@@ -172,12 +172,15 @@ public abstract partial class AudioProcessor<TAudioProcessorModel>
     /// <summary>
     /// This method is called by <see cref="Process"/> after <see cref="ProcessMain"/> to check if the output is silent.
     /// </summary>
+    /// <remarks>
+    /// Every output bus is checked, whether or not an input bus goes with it - an instrument has
+    /// outputs only.
+    /// </remarks>
     protected virtual void PostProcessCheckSilence(in AudioProcessData data)
     {
-        var inputCount = data.Input.BusCount;
         var outputCount = data.Output.BusCount;
         var busOutputs = GetBusInfoList(BusMediaType.Audio, BusDirection.Output);
-        for (int bus = 0; bus < inputCount && bus < outputCount; bus++)
+        for (int bus = 0; bus < outputCount && bus < busOutputs.Length; bus++)
         {
             data.Output[bus].SilenceFlags = 0;
 

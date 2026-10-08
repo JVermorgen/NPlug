@@ -58,13 +58,16 @@ public static class AudioHelper
                     }
                 }
 
-                sampleIndex *= Vector256<T>.Count;
+                sampleIndex *= Vector128<T>.Count;
             }
         }
 
+        if (!isChannelSilent) return false;
+
+        // The samples the vectors didn't cover (or all of them, without vector hardware).
         for (; sampleIndex < buffer.Length; sampleIndex++)
         {
-            if (buffer[sampleIndex] > silenceThreshold)
+            if (T.Abs(buffer[sampleIndex]) > silenceThreshold)
             {
                 isChannelSilent = false;
                 break;
