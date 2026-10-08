@@ -45,13 +45,19 @@ internal static unsafe partial class LibVst
 
         private static partial ComResult onKeyDown_ToManaged(IPlugView* self, ushort key, short keyCode, short modifiers)
         {
-            Get(self).OnKeyDown(key, keyCode, modifiers);
+            var view = Get(self);
+            if (view is IAudioPluginViewKeyboard keyboard) return keyboard.OnKeyDown(key, keyCode, modifiers);
+
+            view.OnKeyDown(key, keyCode, modifiers);
             return true;
         }
 
         private static partial ComResult onKeyUp_ToManaged(IPlugView* self, ushort key, short keyCode, short modifiers)
         {
-            Get(self).OnKeyUp(key, keyCode, modifiers);
+            var view = Get(self);
+            if (view is IAudioPluginViewKeyboard keyboard) return keyboard.OnKeyUp(key, keyCode, modifiers);
+
+            view.OnKeyUp(key, keyCode, modifiers);
             return true;
         }
 
